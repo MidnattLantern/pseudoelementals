@@ -1,0 +1,20 @@
+* {
+	box-sizing: none;
+	margin: 0;
+	padding: 0;
+
+	--c-surface: rgb(22, 20, 24);
+	--c-body: rgb(200, 200, 200);
+	--c-primary: rgb(220, 40, 115);
+
+	--f-sans: "Josefin Sans", sans-serif;
+}
+
+body {
+	background: var(--c-surface);
+}
+
+h1 {
+	color: var(--c-body);
+	font-family: var(--f-sans);
+}
