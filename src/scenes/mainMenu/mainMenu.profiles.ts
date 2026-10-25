@@ -1,6 +1,8 @@
-import { sceneHandler } from "../sceneHandler"
+import { sceneHandler } from "../../sceneHandler"
+import { sessionMemory } from "../../sessionMemory"
+import { sceneContainer } from "./mainMenu.sceneContainer"
 
-function mount() {
+function useLandingProfile() {
     const container = document.createElement('div')
 
     // elements
@@ -21,15 +23,17 @@ function mount() {
     // handlers
     function handleSetGameSessionScene() {
         unmountEventListeners()
-        sceneHandler.handleSetSwitchScene('gameSession')
+        const sceneName = 'gameSession'
+        sceneHandler.handleSetSwitchScene(sceneName)
+        sessionMemory.setCurrentScene(sceneName)
     }
 
-    // init & export
+    //init & apply
     mountEventListeners()
     container.append(heading, setGameSessionButton)
-    return container
+    sceneContainer.reference.replaceChildren(container)
 }
 
-export const mainMenuScene = {
-    mount
+export const mainMenuProfiles = {
+    useLandingProfile
 }

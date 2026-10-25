@@ -1,7 +1,7 @@
 import { sessionMemory } from "./sessionMemory";
-import { gameSessionScene } from "./scenes/gameSession";
-import { mainMenuScene } from "./scenes/mainMenu";
+import { gameSessionScene } from "./scenes/gameSession/gameSession";
 import { monitor } from "./monitor";
+import { mainMenuScene } from "./scenes/mainMenu/mainMenu";
 
 function handleSetSwitchScene(name: string) {
     sessionMemory.setCurrentScene(name)

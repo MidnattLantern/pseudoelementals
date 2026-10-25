@@ -1,0 +1,18 @@
+.container {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	aspect-ratio: var(--l-body-aspect-radio);
+	width: calc(100vw - var(--l-body-margin));
+	max-width: calc(min(100vw, 100vh * ( var(--l-body-aspect-radio) ) - var(--l-body-margin)));
+
+	border-radius: var(--l-body-border-radius);
+
+	background: url('placeholder-background.webp');
+	background-size: cover;
+
+	overflow: hidden;
+}
