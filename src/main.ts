@@ -1,20 +1,8 @@
-import { sceneHandler } from './scenes/sceneHandler'
 import './style.scss'
+import './monitor'
+import { sceneHandler } from './sceneHandler'
 
 const app = document.getElementById('app')
+if (!app) throw new Error('Could not find #app element')
 
-const monitor = document.createElement('div')
-monitor.className = 'monitor'
-
-if (app) app.append(monitor)
-
-function getMonitor() {
-	return monitor
-}
-
-export const main = {
-	getMonitor
-}
-
-// initialize
 sceneHandler.handleSetSwitchScene('mainMenu')

@@ -1,27 +1,32 @@
-import { sceneHandler } from "./sceneHandler"
+import { sceneHandler } from "../sceneHandler"
 
 function mount() {
     const container = document.createElement('div')
-    const hello = document.createElement('h1')
-    hello.textContent = 'Hello 2'
 
-    function handleSetGameSessionScene() {
-        sceneHandler.handleSetSwitchScene('gameSession')
-    }
-
-    function handleSetAboutScene() {
-        sceneHandler.handleSetSwitchScene('about')
-    }
+    // elements
+    const heading = document.createElement('h1')
+    heading.textContent = 'Main menu'
 
     const setGameSessionButton = document.createElement('button')
     setGameSessionButton.textContent = 'Game session'
-    setGameSessionButton.addEventListener('click', handleSetGameSessionScene)
 
-    const setAboutButton = document.createElement('button')
-    setAboutButton.textContent = 'About'
-    setAboutButton.addEventListener('click', handleSetAboutScene)
+    // lifecycles
+    function mountEventListeners() {
+        setGameSessionButton.addEventListener('click', handleSetGameSessionScene)
+    }
+    function unmountEventListeners() {
+        setGameSessionButton.removeEventListener('click', handleSetGameSessionScene)
+    }
 
-    container.append(hello, setGameSessionButton, setAboutButton)
+    // handlers
+    function handleSetGameSessionScene() {
+        unmountEventListeners()
+        sceneHandler.handleSetSwitchScene('gameSession')
+    }
+
+    // init & export
+    mountEventListeners()
+    container.append(heading, setGameSessionButton)
     return container
 }
 
