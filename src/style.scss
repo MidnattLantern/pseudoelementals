@@ -4,9 +4,13 @@
 	padding: 0;
 
 	--c-void: rgb(0, 0, 0);
+	--c-clear: rgba(0, 0, 0, 0);
 	--c-surface: rgb(22, 20, 24);
+	--c-surface-transparent: rgba(22, 20, 24, 0.5);
 	--c-body: rgb(200, 200, 200);
+	--c-body-transparent: rgba(200, 200, 200, 0.5);
 	--c-primary: rgb(220, 40, 115);
+	--c-primary-transparent: rgb(220, 40, 115, 0.5);
 
 	--f-sans: "Josefin Sans", sans-serif;
 
@@ -24,7 +28,8 @@ body {
 	height: 100vh;
 }
 
-h1 {
+h1, p, span {
 	color: var(--c-body);
 	font-family: var(--f-sans);
+	text-shadow: 0 2px 2px var(--c-surface);
 }

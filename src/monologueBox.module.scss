@@ -4,5 +4,33 @@
     bottom: 0;
     left: 0;
     right: 0;
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textBox {
+    position: relative;
+    width: calc(100% - var(--l-body-margin));
+    min-height: 5rem;
+    padding: 0.5rem;
+    background-color: var(--c-surface-transparent);
+    backdrop-filter: blur(25px);
+
+    .progressButton {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        color: var(--c-clear);
+        background-color: var(--c-clear);
+        border: 3px inset var(--c-body-transparent);
+
+        &:hover {
+            border-color: var(--c-primary-transparent);
+            cursor: pointer;
+        }
+    }
 }
